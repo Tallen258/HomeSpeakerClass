@@ -13,9 +13,8 @@ services:
     - 80:80
     - 443:443
     volumes:
-    - "/home/piuser/music:/music"
-    - "/home/piuser/cert:/certs"
-    - "/sys/class/backlight/10-0045:/sys/class/backlight/10-0045"
+    - "/home/taft/music:/music"
+    - "/home/taft/cert:/certs"
     depends_on:
     - aspire
     environment:
@@ -28,7 +27,6 @@ services:
     - OTEL_EXPORTER_OTLP_PROTOCOL=grpc
     - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire:18889
     - OTEL_SERVICE_NAME=HomeSpeaker
-    - NIGHTSCOUT_URL=https://janedoe.azurewebsites.net
     networks:
       speakernet:
 
