@@ -15,8 +15,8 @@ services:
     volumes:
     - "/home/taft/music:/music"
     - "/home/taft/cert:/certs"
-    depends_on:
-    - aspire
+    # depends_on:
+    # - aspire
     environment:
     - MediaFolder=/music
     - ALSA_CARD=Headphones
@@ -30,16 +30,16 @@ services:
     networks:
       speakernet:
 
-  aspire:
-    container_name: aspire
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:9.0
-    environment:
-    - DOTNET_DASHBOARD_UNSECURED_ALLOW_ANONYMOUS=true
-    ports:
-    - 18888:18888 # web
-    - 4317:18889  # OTLP
-    networks:
-      speakernet:
+  # aspire:
+  #   container_name: aspire
+  #   image: mcr.microsoft.com/dotnet/aspire-dashboard:9.0
+  #   environment:
+  #   - DOTNET_DASHBOARD_UNSECURED_ALLOW_ANONYMOUS=true
+  #   ports:
+  #   - 18888:18888 # web
+  #   - 4317:18889  # OTLP
+  #   networks:
+  #     speakernet:
 
 networks:
  speakernet:
